@@ -1,7 +1,14 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
-  <HelloWorld />
+  <nav>
+    <p>Name Brand</p>
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <router-link to="/contact">Contact</router-link>
+  </nav>
+  
+  <router-view />
 </template>
