@@ -1,14 +1,12 @@
-<script setup>
-
-</script>
-
 <template>
-  <nav>
-    <p>Name Brand</p>
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/contact">Contact</router-link>
-  </nav>
-  
-  <router-view />
+  <Navbar />
+  <main>
+    <router-view />
+  </main>
+  <Footer />
 </template>
+
+<script setup>
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+</script>

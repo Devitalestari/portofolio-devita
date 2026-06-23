@@ -1,0 +1,137 @@
+.contact-section {
+  padding-top: 132px;
+}
+
+.contact-layout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+
+.contact-page-grid {
+  align-items: stretch;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1.08fr 0.92fr;
+}
+
+.contact-card {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(58, 175, 169, 0.18);
+  border-left: 6px solid var(--color-primary);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr auto;
+  min-width: 0;
+  padding: 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+  box-shadow: 0 24px 58px rgba(33, 123, 119, 0.18);
+  transform: translateY(-5px);
+}
+
+.contact-card span {
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+  grid-column: 1 / -1;
+  text-transform: uppercase;
+}
+
+.contact-card h3 {
+  font-size: 1.02rem;
+  font-weight: 900;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-card a {
+  background: rgba(58, 175, 169, 0.12);
+  border-radius: 999px;
+  color: var(--color-primary-dark);
+  font-size: 0.9rem;
+  font-weight: 900;
+  padding: 10px 14px;
+}
+
+.contact-card a:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.cta-section {
+  background: transparent;
+  padding: 0;
+}
+
+.cta-content {
+  background: var(--color-primary);
+  border-radius: 24px;
+  box-shadow: var(--shadow-strong);
+  color: #ffffff;
+  height: 100%;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-content::after {
+  border: 34px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  content: '';
+  height: 170px;
+  position: absolute;
+  right: -56px;
+  top: -54px;
+  width: 170px;
+}
+
+.cta-content span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.cta-content h2 {
+  font-weight: 900;
+  margin: 12px 0;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.cta-button {
+  background: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 16px 36px rgba(17, 24, 39, 0.18);
+}
+
+.cta-button:hover {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .contact-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact-section {
+    padding-top: 112px;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+}

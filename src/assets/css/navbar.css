@@ -1,0 +1,80 @@
+.portfolio-navbar {
+  background: var(--color-primary);
+  box-shadow: 0 14px 38px rgba(33, 123, 119, 0.22);
+  padding: 16px 0;
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
+  z-index: 1000;
+}
+
+.portfolio-navbar.scrolled,
+.portfolio-navbar:has(.navbar-collapse.show) {
+  box-shadow: 0 18px 46px rgba(17, 24, 39, 0.16);
+  padding: 10px 0;
+}
+
+.portfolio-navbar .navbar-brand {
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.14);
+  color: var(--color-primary);
+  font-size: 1.22rem;
+  font-weight: 900;
+  padding: 8px 18px;
+}
+
+.portfolio-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 800;
+  margin-left: 22px;
+  padding: 8px 0;
+  position: relative;
+}
+
+.portfolio-navbar .nav-link::after {
+  background: #ffffff;
+  border-radius: 999px;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  width: 100%;
+}
+
+.portfolio-navbar .nav-link:hover,
+.portfolio-navbar .nav-link.router-link-active {
+  color: #ffffff;
+}
+
+.portfolio-navbar .nav-link:hover::after,
+.portfolio-navbar .nav-link.router-link-active::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggler {
+  background: #ffffff;
+  border: 0;
+  box-shadow: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 991.98px) {
+  .portfolio-navbar .navbar-collapse {
+    background: var(--color-primary-dark);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    margin-top: 14px;
+    padding: 12px 18px;
+  }
+
+  .portfolio-navbar .nav-link {
+    margin-left: 0;
+  }
+}

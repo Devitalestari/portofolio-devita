@@ -1,0 +1,119 @@
+.project-modal {
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(18, 32, 35, 0.66);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 1100;
+}
+
+.project-modal-dialog {
+  background: #ffffff;
+  border: 1px solid rgba(58, 175, 169, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 34px 96px rgba(17, 24, 39, 0.34);
+  max-height: calc(100vh - 48px);
+  max-width: 940px;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+}
+
+.modal-close {
+  align-items: center;
+  background: #ffffff;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  color: var(--color-text);
+  display: flex;
+  font-size: 1.7rem;
+  height: 44px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  transition: transform 0.25s ease, color 0.25s ease;
+  width: 44px;
+  z-index: 2;
+}
+
+.modal-close:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.modal-image {
+  aspect-ratio: 16 / 8;
+  background: var(--color-alt);
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+}
+
+.modal-content-area {
+  padding: 34px;
+}
+
+.modal-tags {
+  margin-bottom: 18px;
+}
+
+.modal-content-area h3 {
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  font-weight: 900;
+  margin: 0;
+}
+
+.modal-divider {
+  background: linear-gradient(90deg, var(--color-primary), rgba(58, 175, 169, 0));
+  border-radius: 999px;
+  height: 4px;
+  margin: 18px 0 20px;
+  width: 160px;
+}
+
+.modal-content-area p {
+  color: var(--color-muted);
+  line-height: 1.85;
+  margin: 0;
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-active .project-modal-dialog,
+.modal-leave-active .project-modal-dialog {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.modal-enter-from .project-modal-dialog,
+.modal-leave-to .project-modal-dialog {
+  opacity: 0;
+  transform: scale(0.94);
+}
+
+@media (max-width: 575.98px) {
+  .project-modal {
+    padding: 14px;
+  }
+
+  .modal-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .modal-content-area {
+    padding: 24px;
+  }
+}
