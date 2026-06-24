@@ -35,6 +35,10 @@
               <span>Devita</span>
             </div>
             <div>
+              <strong>Domisili</strong>
+              <span>Bangli, Bali</span>
+            </div>
+            <div>
               <strong>Role</strong>
               <span>Web Developer</span>
             </div>

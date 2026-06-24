@@ -29,7 +29,7 @@
             </div>
             <div class="hero-floating-card">
               <strong>Portfolio</strong>
-              <span>Modern personal branding</span>
+              <span>Personal branding</span>
             </div>
           </div>
         </div>

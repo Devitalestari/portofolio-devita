@@ -1,46 +1,60 @@
 .portfolio-navbar {
-  background: var(--color-primary);
-  box-shadow: 0 14px 38px rgba(33, 123, 119, 0.22);
-  padding: 16px 0;
-  transition: box-shadow 0.3s ease, padding 0.3s ease;
+  background: rgba(58, 175, 169, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+  transition: var(--transition-smooth);
   z-index: 1000;
+  box-shadow: 0 4px 20px rgba(58, 175, 169, 0.15);
 }
 
 .portfolio-navbar.scrolled,
 .portfolio-navbar:has(.navbar-collapse.show) {
-  box-shadow: 0 18px 46px rgba(17, 24, 39, 0.16);
-  padding: 10px 0;
+  background: rgba(58, 175, 169, 0.98);
+  box-shadow: var(--shadow-tinted-md);
+  padding: 12px 0;
 }
 
 .portfolio-navbar .navbar-brand {
-  background: #ffffff;
-  border-radius: 999px;
-  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.14);
-  color: var(--color-primary);
-  font-size: 1.22rem;
-  font-weight: 900;
-  padding: 8px 18px;
+  background: transparent;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  padding: 0;
+  transition: var(--transition-fast);
+}
+
+.portfolio-navbar .navbar-brand .brand-accent {
+  color: #ffffff;
+  padding: 2px 10px;
+  border-radius: 8px;
+  margin-left: 4px;
 }
 
 .portfolio-navbar .nav-link {
-  color: rgba(255, 255, 255, 0.86);
-  font-weight: 800;
-  margin-left: 22px;
-  padding: 8px 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-left: 26px;
+  padding: 6px 0;
   position: relative;
+  transition: var(--transition-fast);
 }
 
 .portfolio-navbar .nav-link::after {
   background: #ffffff;
   border-radius: 999px;
-  bottom: 0;
+  bottom: -2px;
   content: '';
   height: 3px;
   left: 0;
   position: absolute;
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   width: 100%;
 }
 
@@ -52,29 +66,49 @@
 .portfolio-navbar .nav-link:hover::after,
 .portfolio-navbar .nav-link.router-link-active::after {
   transform: scaleX(1);
+  transform-origin: left;
 }
 
 .navbar-toggler {
-  background: #ffffff;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: none;
+  padding: 6px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: var(--transition-fast);
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
 }
 
 @media (max-width: 991.98px) {
   .portfolio-navbar .navbar-collapse {
-    background: var(--color-primary-dark);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(58, 175, 169, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-card);
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--shadow-tinted-md);
     margin-top: 14px;
-    padding: 12px 18px;
+    padding: 20px 24px;
   }
 
   .portfolio-navbar .nav-link {
     margin-left: 0;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .portfolio-navbar .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+
+  .portfolio-navbar .nav-link::after {
+    display: none;
   }
 }

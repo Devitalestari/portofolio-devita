@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <RouterLink to="/">Devita Lestari</RouterLink>
+          <RouterLink to="/">Devita <span>Lestari</span></RouterLink>
           <p>Web Developer yang membangun website responsif, rapi, dan berorientasi pengalaman pengguna.</p>
         </div>
         <div class="footer-links">
@@ -15,7 +15,7 @@
       </div>
       <div class="footer-bottom">
         <span>2026 Ni Made Devita Lestari</span>
-        <span>Modern Personal Branding Portfolio</span>
+        <span>Personal Branding Portfolio</span>
       </div>
     </div>
   </footer>
