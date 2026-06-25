@@ -131,6 +131,76 @@
   will-change: transform, opacity;
 }
 
+/* SECTION SPACING */
+.modal-section {
+  margin-top: 28px;
+}
+
+/* SUBTITLE */
+.modal-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--color-text);
+  position: relative;
+}
+
+/* FEATURE LIST */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+}
+
+/* DOT (biar aesthetic, pakai warna utama kamu) */
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 8px rgba(58, 175, 169, 0.6);
+}
+
+/* TEAM BOX */
+.team-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(58, 175, 169, 0.05);
+  border: 1px solid rgba(58, 175, 169, 0.15);
+  padding: 16px;
+  border-radius: 14px;
+}
+
+/* TEAM ITEM */
+.team-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.team-item .label {
+  color: var(--color-muted);
+}
+
+.team-item .value {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* HIGHLIGHT ROLE */
+.team-item .highlight {
+  color: var(--color-primary);
+}
+
 @media (max-width: 767.98px) {
   .project-modal {
     padding: 16px;

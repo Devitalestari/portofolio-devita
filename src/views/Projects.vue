@@ -1,95 +1,77 @@
 <template>
-  <section class="section projects-section">
+  <section class="section skills-section">
     <div class="container">
-      <div class="section-heading animate projects-heading">
-        <span class="section-kicker">Projects</span>
-        <h1>Project Pilihan</h1>
+      <div class="skills-header animate">
+        <div>
+          <span class="section-kicker">Skills</span>
+          <h1>Kemampuan Teknis</h1>
+        </div>
         <p>
-          Beberapa project yang pernah saya kerjakan sebagai latihan dan pengembangan kemampuan
-          dalam membangun aplikasi web.
+          Setiap persentase menggambarkan kemampuan saya saat ini dan hal yang sudah bisa saya
+          kerjakan menggunakan skill tersebut.
         </p>
       </div>
 
-      <div class="projects-grid">
-        <article
-          v-for="project in projects"
-          :key="project.title"
-          class="project-card animate"
-          tabindex="0"
-          @click="openProject(project)"
-          @keydown.enter="openProject(project)"
-        >
-          <div class="project-image-area">
-            <img :src="project.image" :alt="project.title" />
-            <div class="project-overlay">
-              <button class="btn btn-light project-overlay-btn" type="button" @click="openProject(project)">
-                Detail
-              </button>
+      <div class="skills-grid">
+        <article v-for="skill in skills" :key="skill.name" class="skill-card animate">
+          <div class="skill-top">
+            <span class="skill-icon">{{ skill.icon }}</span>
+            <div>
+              <h3>{{ skill.name }}</h3>
+              <p>{{ skill.level }}</p>
             </div>
+            <strong>{{ skill.percent }}%</strong>
           </div>
-          <div class="project-card-body">
-            <div class="project-tags">
-              <span v-for="tech in project.tech" :key="tech">{{ tech }}</span>
-            </div>
-            <h3>{{ project.title }}</h3>
-            <p>{{ project.short }}</p>
+          <p class="skill-description">{{ skill.description }}</p>
+          <div class="progress skill-progress" role="progressbar" :aria-valuenow="skill.percent" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" :style="{ width: `${skill.percent}%` }"></div>
           </div>
         </article>
       </div>
     </div>
   </section>
-
-  <Modal :show="Boolean(selectedProject)" :project="selectedProject" @close="selectedProject = null" />
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
-import Modal from '../components/Modal.vue'
-import siMbgImage from '@/assets/image/si-mbg.png'
-import gameImage from '@/assets/image/game.png'
-import webBiodataImage from '@/assets/image/web_biodata.png'
-import skensisImage from '@/assets/image/skensis.png'
+import { onMounted, onUnmounted } from 'vue'
 
-const selectedProject = ref(null)
-
-const projects = [
+const skills = [
   {
-    title: 'Si-MBG',
-    image: siMbgImage,
-    short: 'Sistem informasi berbasis web untuk pengelolaan data dan administrasi.',
-    tech: ['Web App', 'CRUD', 'Responsive'],
-    description:
-      'Sistem informasi berbasis web yang dirancang untuk membantu pengelolaan data dan proses administrasi secara lebih efisien. Aplikasi ini memungkinkan pengguna untuk mengelola data dengan mudah melalui tampilan yang terstruktur dan responsif. Dengan fitur CRUD (Create, Read, Update, Delete), sistem ini mempermudah pencatatan, pencarian, serta pengolahan data secara real-time.',
+    name: 'HTML',
+    level: 'Cukup baik',
+    percent: 85,
+    icon: 'H',
+    description: 'Sudah mampu menyusun struktur halaman, section, form, card, tabel sederhana, dan konten web yang rapi.',
   },
   {
-    title: 'Escape From Haunted School',
-    image: gameImage,
-    short: 'Game 2D interaktif bertema horor dengan eksplorasi dan strategi.',
-    tech: ['Game 2D', 'Logic', 'Interactive'],
-    description:
-      'Game 2D interaktif bertema horor yang menantang pemain untuk melarikan diri dari sekolah berhantu. Pemain harus memecahkan teka-teki, menghindari rintangan, dan menemukan jalan keluar. Game ini menggabungkan elemen eksplorasi dan strategi, dengan suasana mencekam yang dibangun melalui visual dan mekanik permainan.',
+    name: 'CSS',
+    level: 'Menengah',
+    percent: 65,
+    icon: 'C',
+    description: 'Mampu membuat layout responsif, styling card, button, spacing, hover effect, dan tampilan modern yang konsisten.',
   },
   {
-    title: 'Personal Website',
-    image: webBiodataImage,
-    short: 'Website pribadi untuk menampilkan biodata, skill, dan project.',
-    tech: ['Portfolio', 'Responsive', 'Branding'],
-    description:
-      'Website pribadi yang menampilkan informasi biodata, keterampilan, serta proyek yang pernah dikerjakan. Dibangun dengan desain modern dan responsif, website ini berfungsi sebagai identitas digital yang merepresentasikan diri secara profesional di dunia online.',
+    name: 'JavaScript',
+    level: 'Dasar berkembang',
+    percent: 45,
+    icon: 'JS',
+    description: 'Bisa membuat interaksi dasar seperti modal, animasi scroll, event click, manipulasi data sederhana, dan validasi ringan.',
   },
   {
-    title: 'Skensa Analisis Potensi Siswa',
-    image: skensisImage,
-    short: 'Aplikasi berbasis web untuk menganalisis potensi siswa.',
-    tech: ['Education', 'Data Analysis', 'Web'],
-    description:
-      'Aplikasi berbasis web yang dirancang untuk menganalisis potensi siswa melalui berbagai parameter dan indikator. Aplikasi ini membantu pendidik dalam mengidentifikasi kekuatan dan kelemahan siswa, serta merancang strategi pembelajaran yang lebih efektif.',
+    name: 'Bootstrap',
+    level: 'Basic',
+    percent: 35,
+    icon: 'B',
+    description: 'Dapat memakai grid, container, navbar, button, dan komponen dasar untuk mempercepat pembuatan UI responsif.',
+  },
+  {
+    name: 'Python',
+    level: 'Basic',
+    percent: 30,
+    icon: 'PY',
+    description: 'Memahami dasar variabel, percabangan, perulangan, function sederhana, dan latihan logika pemrograman.',
   },
 ]
-
-const openProject = (project) => {
-  selectedProject.value = project
-}
 
 let observer
 
@@ -100,7 +82,7 @@ onMounted(() => {
         if (entry.isIntersecting) entry.target.classList.add('show')
       })
     },
-    { threshold: 0.14 }
+    { threshold: 0.16 }
   )
 
   document.querySelectorAll('.animate').forEach((element) => observer.observe(element))
