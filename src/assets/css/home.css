@@ -1,55 +1,69 @@
+/* ====== BAGIAN UTAMA HERO ====== */
 .home-hero {
-  align-items: center;
-  display: flex;
-  min-height: 100vh;
-  padding: 140px 0 100px;
-  position: relative;
-  overflow: hidden;
+  display: flex; /* Mengatur isi jadi sejajar (horizontal) */
+  align-items: center; /* Membuat isi rata tengah secara vertikal */
+  min-height: 100vh; /* Tinggi minimal 1 layar penuh */
+  padding: 140px 0 100px; /* Jarak atas 140px, bawah 100px */
+  position: relative; /* Supaya elemen di dalam bisa pakai position absolute */
+  overflow: hidden; /* Menyembunyikan elemen yang keluar dari area */
 }
 
-/* Background grid / radial glow effects */
+
+/* ====== EFEK BACKGROUND GLOW ====== */
 .home-hero::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  right: -5%;
+  content: ''; /* Wajib untuk pseudo-element */
+  position: absolute; /* Posisi bebas di dalam parent */
+  top: 15%; /* Jarak dari atas */
+  right: -5%; /* Sedikit keluar ke kanan */
   width: 500px;
   height: 500px;
   background: radial-gradient(circle, rgba(58, 175, 169, 0.2) 0%, transparent 70%);
-  z-index: 0;
-  pointer-events: none;
+  /* Membuat efek cahaya (glow) berbentuk lingkaran */
+  z-index: 0; /* Di belakang */
+  pointer-events: none; /* Tidak bisa diklik */
 }
 
+
+/* ====== BAGIAN TEXT KIRI ====== */
 .hero-copy {
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Supaya tampil di atas background glow */
 }
 
+
+/* ====== GARIS AKSEN ====== */
 .hero-accent {
-  background: var(--gradient-primary);
-  border-radius: 999px;
+  background: var(--gradient-primary); /* Warna gradient utama */
+  border-radius: 999px; /* Membuat ujung bulat */
   height: 6px;
-  margin: 22px 0 18px;
   width: 92px;
-  box-shadow: var(--shadow-tinted-sm);
+  margin: 22px 0 18px; /* Jarak atas & bawah */
+  box-shadow: var(--shadow-tinted-sm); /* Bayangan halus */
 }
 
+
+/* ====== JUDUL BESAR ====== */
 .hero-copy h1 {
   font-size: clamp(5rem, 6.7vw, 5.8rem);
-  font-weight: 800;
+  /* Ukuran font fleksibel mengikuti layar */
+  font-weight: 800; /* Tebal */
   line-height: 1.1;
   margin: 0 0 20px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.03em; /* Jarak antar huruf lebih rapat */
   color: var(--color-text);
 }
 
+
+/* ====== BAGIAN NAMA (SPAN) ====== */
 .hero-copy h1 span {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: block;
+  background: var(--gradient-primary); /* Gradient warna */
+  -webkit-background-clip: text; /* Gradient masuk ke teks */
+  -webkit-text-fill-color: transparent; /* Teks jadi transparan */
+  display: block; /* Pindah ke baris baru */
 }
 
+
+/* ====== TAGLINE ====== */
 .hero-tagline {
   color: var(--color-primary-hover);
   font-size: clamp(1.15rem, 2vw, 1.4rem);
@@ -59,55 +73,64 @@
   letter-spacing: -0.01em;
 }
 
+
+/* ====== DESKRIPSI ====== */
 .hero-intro {
   font-size: 1.05rem;
-  color: var(--color-muted);
-  line-height: 1.75;
+  color: var(--color-muted); /* Warna lebih soft */
+  line-height: 1.75; /* Jarak antar baris */
   margin-bottom: 30px;
-  max-width: 540px;
+  max-width: 540px; /* Lebar maksimal biar enak dibaca */
 }
 
+
+/* ====== TOMBOL ====== */
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: flex; /* Tombol sejajar */
+  flex-wrap: wrap; /* Jika sempit akan turun ke bawah */
+  gap: 16px; /* Jarak antar tombol */
   margin-top: 32px;
 }
 
+
+/* ====== BAGIAN GAMBAR ====== */
 .hero-visual {
-  margin-left: auto;
+  margin-left: auto; /* Dorong ke kanan */
   max-width: 450px;
   position: relative;
   z-index: 1;
 }
 
-/* Floating Blob Animation behind image */
+
+/* ====== BLOB ANIMATION (BACKGROUND ORGANIK) ====== */
 .hero-shape {
   background: var(--gradient-primary);
   opacity: 0.85;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  inset: 15px -35px -25px 25px;
+  /* Bentuk unik (blob) */
+  inset: 15px -35px -25px 25px; /* Posisi di dalam parent */
   position: absolute;
-  animation: blob-bounce 12s ease-in-out infinite;
+  animation: blob-bounce 12s ease-in-out infinite; /* Animasi terus berjalan */
   z-index: 0;
   box-shadow: var(--glow-effect);
 }
 
+
+/* ====== ANIMASI BLOB ====== */
 @keyframes blob-bounce {
   0%, 100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     transform: rotate(0deg) scale(1);
   }
   33% {
-    border-radius: 53% 47% 43% 57% / 51% 39% 61% 49%;
     transform: rotate(4deg) scale(1.03);
   }
   66% {
-    border-radius: 45% 55% 60% 40% / 40% 60% 40% 60%;
     transform: rotate(-3deg) scale(0.97);
   }
 }
 
+
+/* ====== FRAME GAMBAR ====== */
 .hero-image-wrap {
   background: #ffffff;
   border: 1px solid rgba(58, 175, 169, 0.25);
@@ -120,164 +143,64 @@
   transition: var(--transition-smooth);
 }
 
+
+/* Hover efek (zoom sedikit) */
 .hero-image-wrap:hover {
   transform: scale(1.02);
-  box-shadow: 0 30px 60px -15px rgba(58, 175, 169, 0.25);
 }
 
+
+/* ====== GAMBAR ====== */
 .hero-image {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 5; /* Rasio gambar */
   border-radius: 24px;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; /* Tidak gepeng */
   width: 100%;
-  transition: var(--transition-smooth);
 }
 
+
+/* ====== FLOATING CARD ====== */
 .hero-floating-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(58, 175, 169, 0.2);
-  border-left: 6px solid var(--color-primary);
-  border-radius: var(--radius-card);
+  position: absolute;
   bottom: 30px;
-  box-shadow: var(--shadow-tinted-md);
-  padding: 16px 20px;
-  position: absolute;
   right: -30px;
-  z-index: 2;
-  transition: var(--transition-smooth);
-  animation: card-float 4s ease-in-out infinite alternate;
-}
-
-.hero-floating-card:hover {
-  transform: translateY(-5px) scale(1.05);
-  background: #ffffff;
-  box-shadow: var(--shadow-tinted-lg), var(--glow-effect);
-}
-
-@keyframes card-float {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-
-.hero-floating-card strong {
-  display: block;
-  font-weight: 800;
-  color: var(--color-text);
-  font-size: 1rem;
-}
-
-.hero-floating-card span {
-  color: var(--color-muted);
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.info-card {
-  background: #ffffff;
-  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-tinted-sm);
-  height: 100%;
-  padding: 30px;
-  position: relative;
-  transition: var(--transition-smooth);
+  padding: 16px 20px;
+  animation: card-float 4s ease-in-out infinite alternate; /* Naik turun */
 }
 
-.info-card::before {
-  background: var(--gradient-primary);
-  border-radius: 999px;
-  content: '';
-  height: 48px;
-  opacity: 0.15;
-  position: absolute;
-  right: 24px;
-  top: 24px;
-  width: 48px;
+
+/* ====== ANIMASI FLOATING CARD ====== */
+@keyframes card-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
 
-.info-card:hover {
-  box-shadow: var(--shadow-tinted-md);
-  transform: translateY(-8px);
-  border-color: rgba(58, 175, 169, 0.3);
-}
 
-.info-number {
-  color: var(--color-primary-hover);
-  font-size: 1.25rem;
-  font-weight: 800;
-}
-
-.info-card h3 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: 14px 0 10px;
-  color: var(--color-text);
-}
-
-.info-card p {
-  color: var(--color-muted);
-  line-height: 1.65;
-  margin: 0;
-}
-
+/* ====== RESPONSIVE TABLET ====== */
 @media (max-width: 991.98px) {
   .home-hero {
-    min-height: auto;
-    padding-top: 140px;
-    padding-bottom: 80px;
-    text-align: center;
-  }
-
-  .hero-accent {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-intro {
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center; /* Semua jadi tengah */
   }
 
   .hero-actions {
-    justify-content: center;
+    justify-content: center; /* Tombol ke tengah */
   }
 
   .hero-visual {
-    margin: 40px auto 0;
-  }
-  
-  .hero-floating-card {
-    right: 0;
+    margin: 40px auto 0; /* Gambar ke tengah */
   }
 }
 
-@media (max-width: 575.98px) {
-  .home-hero {
-    padding-bottom: 60px;
-  }
 
+/* ====== RESPONSIVE HP ====== */
+@media (max-width: 575.98px) {
   .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
+    flex-direction: column; /* Tombol jadi vertikal */
   }
 
   .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-floating-card {
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    text-align: left;
-    animation: none;
+    width: 100%; /* Tombol full lebar */
   }
 }

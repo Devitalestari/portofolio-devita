@@ -1,120 +1,150 @@
+/* ================= MODAL BACKGROUND ================= */
 .project-modal {
-  align-items: center;
+  align-items: center; /* konten di tengah secara vertikal */
+  justify-content: center; /* konten di tengah horizontal */
+  display: flex;
+
+  position: fixed; /* biar nutup seluruh layar */
+  inset: 0; /* top, right, bottom, left = 0 */
+  z-index: 1100; /* di atas semua elemen */
+
+  padding: 30px;
+
+  /* background gelap transparan + blur */
+  background: rgba(27, 42, 47, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: rgba(27, 42, 47, 0.6);
-  display: flex;
-  inset: 0;
-  justify-content: center;
-  padding: 30px;
-  position: fixed;
-  z-index: 1100;
 }
 
+/* ================= BOX MODAL ================= */
 .project-modal-dialog {
   background: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: 28px;
+
   box-shadow: var(--shadow-tinted-lg);
-  max-height: calc(100vh - 60px);
+
   max-width: 900px;
-  overflow: auto;
-  position: relative;
   width: 100%;
+
+  max-height: calc(100vh - 60px); /* biar gak kepanjangan */
+  overflow: auto; /* bisa scroll kalau isi panjang */
+
+  position: relative;
+
+  /* animasi muncul */
   animation: modal-dialog-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* animasi saat modal muncul */
 @keyframes modal-dialog-in {
   from {
     opacity: 0;
-    transform: translateY(30px) scale(0.98);
+    transform: translateY(30px) scale(0.98); /* dari bawah sedikit */
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1); /* posisi normal */
   }
 }
 
+/* ================= TOMBOL CLOSE ================= */
 .modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
   align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+  line-height: 1;
+
+  border-radius: 999px; /* bulat */
+  cursor: pointer;
+
+  /* style */
   background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(4px);
   border: 1px solid rgba(58, 175, 169, 0.15);
-  border-radius: 999px;
   box-shadow: var(--shadow-tinted-sm);
   color: var(--color-text);
-  display: flex;
-  font-size: 1.5rem;
-  height: 40px;
-  justify-content: center;
-  line-height: 1;
-  position: absolute;
-  right: 20px;
-  top: 20px;
+
+  backdrop-filter: blur(4px);
+
   transition: var(--transition-smooth);
-  width: 40px;
   z-index: 2;
-  cursor: pointer;
 }
 
+/* efek hover tombol close */
 .modal-close:hover {
   color: var(--color-primary-hover);
   background: #ffffff;
-  transform: scale(1.08) rotate(90deg);
+  transform: scale(1.08) rotate(90deg); /* zoom + muter */
   border-color: var(--color-primary);
 }
 
+/* ================= GAMBAR ================= */
 .modal-image {
-  aspect-ratio: 16 / 9;
-  background: var(--color-alt);
-  object-fit: cover;
-  object-position: top center;
   width: 100%;
+  aspect-ratio: 16 / 9; /* rasio landscape */
+  object-fit: cover; /* gambar tidak gepeng */
+  object-position: top center;
+
+  background: var(--color-alt);
+
   border-bottom: 1px solid var(--color-border);
 }
 
+/* ================= ISI MODAL ================= */
 .modal-content-area {
   padding: 40px;
 }
 
+/* tag (misalnya kategori project) */
 .modal-tags {
   margin-bottom: 20px;
 }
 
+/* judul */
 .modal-content-area h3 {
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   font-weight: 800;
-  color: var(--color-text);
   margin: 0;
-  letter-spacing: -0.02em;
 }
 
+/* garis dekorasi */
 .modal-divider {
-  background: var(--gradient-primary);
-  border-radius: 999px;
+  width: 120px;
   height: 4px;
   margin: 20px 0 24px;
-  width: 120px;
+
+  background: var(--gradient-primary);
+  border-radius: 999px;
 }
 
+/* paragraf */
 .modal-content-area p {
   color: var(--color-muted);
   line-height: 1.8;
-  font-size: 1.05rem;
-  margin: 0;
 }
 
+/* ================= TRANSISI VUE ================= */
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.35s ease;
 }
 
+/* saat muncul/hilang */
 .modal-enter-from,
 .modal-leave-to {
   opacity: 0;
 }
 
-/* Dialog */
+/* animasi dialog */
 .modal-enter-active .project-modal-dialog,
 .modal-leave-active .project-modal-dialog {
   transition: 
@@ -127,6 +157,8 @@
   opacity: 0;
   transform: scale(0.97) translateY(8px);
 }
+
+/* optimasi performa animasi */
 .project-modal-dialog {
   will-change: transform, opacity;
 }
@@ -201,23 +233,24 @@
   color: var(--color-primary);
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 767.98px) {
   .project-modal {
-    padding: 16px;
+    padding: 16px; /* lebih kecil di HP */
   }
 
   .modal-content-area {
     padding: 28px;
   }
-  
+
   .modal-close {
-    right: 14px;
     top: 14px;
+    right: 14px;
   }
 }
 
 @media (max-width: 575.98px) {
   .modal-image {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 10; /* lebih tinggi di HP */
   }
 }

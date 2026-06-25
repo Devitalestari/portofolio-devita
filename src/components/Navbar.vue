@@ -2,15 +2,8 @@
   <nav class="navbar navbar-expand-lg portfolio-navbar fixed-top" :class="{ scrolled: isScrolled }">
     <div class="container">
       <RouterLink class="navbar-brand" to="/">Devita <span class="brand-accent">Lestari</span></RouterLink>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#portfolioNavbar"
-        aria-controls="portfolioNavbar"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNavbar"
+        aria-controls="portfolioNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
