@@ -54,7 +54,7 @@
   height: 4px;
   background: var(--gradient-primary);
   opacity: 0;
-  transition: var(--transition-fast);
+  transition: var(--transition-smooth);
 }
 
 .skill-card:nth-child(1),
@@ -150,7 +150,25 @@
 }
 
 .skill-card.show .progress-bar {
-  transform: scaleX(1);
+  transform: scaleX(var(--progress));
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.skill-card:hover .progress-bar::after {
+  opacity: 1;
 }
 
 @media (max-width: 991.98px) {
@@ -176,7 +194,8 @@
 }
 
 .skill-card.show .progress-bar {
-  transform: scaleX(1);
+  transform: scaleX(var(--progress));
+  box-shadow: 0 0 10px rgba(58, 175, 169, 0.4);
 }
 
 @media (max-width: 991.98px) {

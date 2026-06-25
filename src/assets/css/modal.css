@@ -51,7 +51,7 @@
   position: absolute;
   right: 20px;
   top: 20px;
-  transition: var(--transition-fast);
+  transition: var(--transition-smooth);
   width: 40px;
   z-index: 2;
   cursor: pointer;
@@ -106,7 +106,7 @@
 
 .modal-enter-active,
 .modal-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
 }
 
 .modal-enter-from,
@@ -114,15 +114,21 @@
   opacity: 0;
 }
 
+/* Dialog */
 .modal-enter-active .project-modal-dialog,
 .modal-leave-active .project-modal-dialog {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  transition: 
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
 }
 
 .modal-enter-from .project-modal-dialog,
 .modal-leave-to .project-modal-dialog {
   opacity: 0;
-  transform: scale(0.95) translateY(15px);
+  transform: scale(0.97) translateY(8px);
+}
+.project-modal-dialog {
+  will-change: transform, opacity;
 }
 
 @media (max-width: 767.98px) {

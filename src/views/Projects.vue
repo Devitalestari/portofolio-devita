@@ -47,10 +47,8 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import Modal from '../components/Modal.vue'
 import siMbgImage from '@/assets/image/si-mbg.png'
 import gameImage from '@/assets/image/game.png'
-import myDuitImage from '@/assets/image/myduit.png'
 import webBiodataImage from '@/assets/image/web_biodata.png'
 import skensisImage from '@/assets/image/skensis.png'
-import kalkulatorImage from '@/assets/image/kalkulator.png'
 
 const selectedProject = ref(null)
 
@@ -72,14 +70,6 @@ const projects = [
       'Game 2D interaktif bertema horor yang menantang pemain untuk melarikan diri dari sekolah berhantu. Pemain harus memecahkan teka-teki, menghindari rintangan, dan menemukan jalan keluar. Game ini menggabungkan elemen eksplorasi dan strategi, dengan suasana mencekam yang dibangun melalui visual dan mekanik permainan.',
   },
   {
-    title: 'MyDuit',
-    image: myDuitImage,
-    short: 'Aplikasi manajemen keuangan untuk mencatat pemasukan dan pengeluaran.',
-    tech: ['Finance', 'UI', 'Data'],
-    description:
-      'Aplikasi manajemen keuangan sederhana yang membantu pengguna mencatat pemasukan dan pengeluaran sehari-hari. Dengan tampilan yang clean dan mudah digunakan, pengguna dapat memantau kondisi keuangan mereka secara lebih teratur. Aplikasi ini juga membantu meningkatkan kesadaran dalam mengelola uang secara bijak.',
-  },
-  {
     title: 'Personal Website',
     image: webBiodataImage,
     short: 'Website pribadi untuk menampilkan biodata, skill, dan project.',
@@ -94,14 +84,6 @@ const projects = [
     tech: ['Education', 'Data Analysis', 'Web'],
     description:
       'Aplikasi berbasis web yang dirancang untuk menganalisis potensi siswa melalui berbagai parameter dan indikator. Aplikasi ini membantu pendidik dalam mengidentifikasi kekuatan dan kelemahan siswa, serta merancang strategi pembelajaran yang lebih efektif.',
-  },
-  {
-    title: 'Kalkulator HP',
-    image: kalkulatorImage,
-    short: 'Kalkulator sederhana dengan tampilan responsif seperti perangkat mobile.',
-    tech: ['Calculator', 'Logic', 'Mobile UI'],
-    description:
-      'Aplikasi kalkulator sederhana yang meniru fungsi kalkulator pada perangkat mobile. Mendukung operasi matematika dasar dengan tampilan yang user-friendly dan responsif. Cocok digunakan sebagai latihan logika pemrograman dan manipulasi input pengguna.',
   },
 ]
 

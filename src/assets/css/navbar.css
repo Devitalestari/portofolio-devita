@@ -24,7 +24,7 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   padding: 0;
-  transition: var(--transition-fast);
+  transition: var(--transition-smooth);
 }
 
 .portfolio-navbar .navbar-brand .brand-accent {
@@ -41,7 +41,7 @@
   margin-left: 26px;
   padding: 6px 0;
   position: relative;
-  transition: var(--transition-fast);
+  transition: var(--transition-smooth);
 }
 
 .portfolio-navbar .nav-link::after {
@@ -75,7 +75,7 @@
   padding: 6px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
-  transition: var(--transition-fast);
+  transition: var(--transition-smooth);
 }
 
 .navbar-toggler:focus {

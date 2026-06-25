@@ -138,7 +138,7 @@
   gap: 20px;
   justify-content: space-between;
   padding: 16px 22px;
-  transition: var(--transition-fast);
+  transition: var(--transition-smooth);
   box-shadow: var(--shadow-tinted-sm);
 }
 
