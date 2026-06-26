@@ -41,9 +41,9 @@
             <p>
               Saya siap membantu membuat website yang responsif, rapi, dan sesuai kebutuhan project.
             </p>
-            <a class="btn cta-button" href="https://wa.me/6285337030641" target="_blank" rel="noreferrer">
-              Hubungi Saya
-            </a>
+            <a :href="waLink" target="_blank" class="btn cta-button">
+  Hubungi Saya
+</a>
           </div>
         </div>
       </div>
@@ -72,4 +72,7 @@ onMounted(() => {
 onUnmounted(() => {
   if (observer) observer.disconnect()
 })
+const phone = "6285337030641" 
+const message = "Hai, saya sudah melihat portofolio anda, dan saya sangat tertarik untuk melakukan kolaborasi, mari kita berbincang lebih lanjut" 
+const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 </script>

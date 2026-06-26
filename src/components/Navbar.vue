@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg portfolio-navbar fixed-top" :class="{ scrolled: isScrolled }">
     <div class="container">
-      <RouterLink class="navbar-brand" to="/">Devita <span class="brand-accent">Lestari</span></RouterLink>
+      <RouterLink class="navbar-brand" to="/" @click="closeMenu">
+        Devita <span class="brand-accent">Lestari</span>
+      </RouterLink>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#portfolioNavbar"
         aria-controls="portfolioNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,7 +12,7 @@
       <div id="portfolioNavbar" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li v-for="item in navItems" :key="item.path" class="nav-item">
-            <RouterLink class="nav-link" :to="item.path">{{ item.label }}</RouterLink>
+            <RouterLink class="nav-link" :to="item.path" @click="closeMenu">{{ item.label }}</RouterLink>
           </li>
         </ul>
       </div>
@@ -30,6 +32,12 @@ const navItems = [
   { label: 'Contact', path: '/contact' },
 ]
 
+  const closeMenu = () => {
+  const navbar = document.querySelector('#portfolioNavbar')
+  if (navbar.classList.contains('show')) {
+    navbar.classList.remove('show')
+  }
+}
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
 }
@@ -41,5 +49,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+
 })
 </script>

@@ -165,6 +165,5 @@
   /* overlay selalu terlihat di mobile */
   .project-overlay {
     opacity: 1;
-    background: rgba(58,175,169,0.7);
   }
 }

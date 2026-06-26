@@ -91,6 +91,7 @@ main {
 .section {
   padding: clamp(90px, 10vw, 140px) 0;
   position: relative;
+  scroll-margin-top: 100px;
 }
 
 .section-alt {
@@ -258,7 +259,8 @@ main {
 }
 
 .footer-links {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   flex-wrap: wrap;
   gap: 14px;
   justify-content: flex-end;
@@ -291,6 +293,13 @@ main {
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+.tech-badge {
+  background: #eef2f3;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
 }
 
 @media (max-width: 991.98px) {
@@ -328,3 +337,4 @@ main {
     text-align: center;
   }
 }
+

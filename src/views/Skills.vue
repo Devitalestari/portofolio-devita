@@ -20,12 +20,8 @@
               <h3>{{ skill.name }}</h3>
               <p>{{ skill.level }}</p>
             </div>
-            <strong>{{ skill.percent }}%</strong>
           </div>
           <p class="skill-description">{{ skill.description }}</p>
-          <div class="progress skill-progress" role="progressbar" :aria-valuenow="skill.percent" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" :style="{ width: `${skill.percent}%` }"></div>
-          </div>
         </article>
       </div>
     </div>
@@ -39,35 +35,30 @@ const skills = [
   {
     name: 'HTML',
     level: 'Cukup baik',
-    percent: 85,
     icon: 'H',
     description: 'Sudah mampu menyusun struktur halaman, section, form, card, tabel sederhana, dan konten web yang rapi.',
   },
   {
     name: 'CSS',
     level: 'Menengah',
-    percent: 65,
     icon: 'C',
     description: 'Mampu membuat layout responsif, styling card, button, spacing, hover effect, dan tampilan modern yang konsisten.',
   },
   {
     name: 'JavaScript',
     level: 'Dasar berkembang',
-    percent: 45,
     icon: 'JS',
     description: 'Bisa membuat interaksi dasar seperti modal, animasi scroll, event click, manipulasi data sederhana, dan validasi ringan.',
   },
   {
     name: 'Bootstrap',
     level: 'Dasar',
-    percent: 30,
     icon: 'B',
     description: 'Dapat memakai grid, container, navbar, button, dan komponen dasar untuk mempercepat pembuatan UI responsif.',
   },
   {
     name: 'Python',
     level: 'Dasar',
-    percent: 30,
     icon: 'PY',
     description: 'Memahami dasar variabel, percabangan, perulangan, function sederhana, dan latihan logika pemrograman.',
   },

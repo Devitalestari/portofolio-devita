@@ -233,6 +233,13 @@
   color: var(--color-primary);
 }
 
+.modal-tags span {
+  background: var(--color-primary-light);
+  border-radius: 999px;
+
+  padding: 6px 12px;
+  font-size: 12px;
+}
 /* ================= RESPONSIVE ================= */
 @media (max-width: 767.98px) {
   .project-modal {
