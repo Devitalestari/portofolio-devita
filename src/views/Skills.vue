@@ -59,14 +59,14 @@ const skills = [
   },
   {
     name: 'Bootstrap',
-    level: 'Basic',
-    percent: 35,
+    level: 'Dasar',
+    percent: 30,
     icon: 'B',
     description: 'Dapat memakai grid, container, navbar, button, dan komponen dasar untuk mempercepat pembuatan UI responsif.',
   },
   {
     name: 'Python',
-    level: 'Basic',
+    level: 'Dasar',
     percent: 30,
     icon: 'PY',
     description: 'Memahami dasar variabel, percabangan, perulangan, function sederhana, dan latihan logika pemrograman.',

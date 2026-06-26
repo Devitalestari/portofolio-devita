@@ -33,10 +33,10 @@
             <a href="https://github.com/Devitalestari" target="_blank" rel="noreferrer">Lihat Github</a>
           </article>
         </div>
-
-        <div class="cta-section">
+<!-- Call to Action Section -->
+        <div class="cta-section"> 
           <div class="cta-content animate">
-            <span>Available for collaboration</span>
+            <span>Terbuka untuk kolaborasi dan freelance</span>
             <h2>Siap bekerja sama dengan saya?</h2>
             <p>
               Saya siap membantu membuat website yang responsif, rapi, dan sesuai kebutuhan project.

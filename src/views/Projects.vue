@@ -11,14 +11,8 @@
       </div>
 
       <div class="projects-grid">
-        <article
-          v-for="project in projects"
-          :key="project.title"
-          class="project-card animate"
-          tabindex="0"
-          @click="openProject(project)"
-          @keydown.enter="openProject(project)"
-        >
+        <article v-for="project in projects" :key="project.title" class="project-card animate" tabindex="0"
+          @click="openProject(project)" @keydown.enter="openProject(project)">
           <div class="project-image-area">
             <img :src="project.image" :alt="project.title" />
             <div class="project-overlay">
@@ -82,14 +76,14 @@ const projects = [
     tech: ["HTML", "CSS", "JavaScript"],
     description:
       'Game 2D interaktif bertema horor yang menantang pemain untuk melarikan diri dari sekolah berhantu. Pemain harus memecahkan teka-teki, menghindari rintangan, dan menemukan jalan keluar. Game ini menggabungkan elemen eksplorasi dan strategi, dengan suasana mencekam yang dibangun melalui visual dan mekanik permainan.',
-      features: [
+    features: [
       "Gameplay eksplorasi",
       "Teka-teki interaktif",
       "Sistem rintangan",
       "Level permainan",
       "Efek visual horor"
     ],
-     team: {
+    team: {
       type: "Kelompok",
       detail: "Tim pengembangan game",
       role: "Backend Developer"
@@ -126,7 +120,7 @@ const projects = [
       "Dashboard",
       "Manajemen Jurusan"
     ],
-    
+
     team: {
       type: "Kelompok",
       detail: "Tim pengembangan",
@@ -158,6 +152,3 @@ onUnmounted(() => {
   if (observer) observer.disconnect()
 })
 </script>
-
-
-
